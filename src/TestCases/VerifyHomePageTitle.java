@@ -7,7 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class SignIn {
+public class VerifyHomePageTitle {
 
     WebDriver driver;
     HomePage homePage;
@@ -22,8 +22,8 @@ public class SignIn {
     }
 
     @Test
-    public void pressSignInButton(){
-        homePage.pressSignInButton();
+    public void verifyIfYouAreOnTheHomePage(){
+        homePage.checkIfYouAreOnTheHomePage();
     }
 
     @AfterTest
