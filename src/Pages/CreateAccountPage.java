@@ -2,6 +2,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class CreateAccountPage {
 
@@ -54,8 +55,28 @@ public class CreateAccountPage {
         driver.findElement(lastName).sendKeys(nameLast);
     }
 
+    public void clearInputEmail(String emailAddress){
+        driver.findElement(email).clear();
+        driver.findElement(email).sendKeys(emailAddress);
+    }
+
     public void inputPassword(String passwordInput){
         driver.findElement(password).sendKeys(passwordInput);
+    }
+
+    public void selectFirstDay(){
+        Select firstDay = new Select(driver.findElement(days));
+        firstDay.selectByVisibleText("1");
+    }
+
+    public void selectFirstMonth(){
+        Select firstMonth = new Select(driver.findElement(months));
+        firstMonth.selectByVisibleText("1");
+    }
+
+    public void selectYear2010(){
+        Select getYear2010 = new Select(driver.findElement(years));
+        getYear2010.selectByVisibleText("2010");
     }
 
     public void selectSignUpForNewsletterCheckBox(){
@@ -90,12 +111,22 @@ public class CreateAccountPage {
         driver.findElement(city).sendKeys(cityInput);
     }
 
+    public void selectAlabamaState(){
+        Select getAlabama = new Select(driver.findElement(state));
+        getAlabama.selectByVisibleText("Alabama");
+    }
+
     public void inputZipPostCode(String zipPostalCode){
         driver.findElement(zipPostCode).sendKeys(zipPostalCode);
     }
 
-    public void inputAdditionnalInformation(String additionnalInput){
-        driver.findElement(additionalInformation).sendKeys(additionnalInput);
+    public void selectCountryUnitedStates(){
+        Select selectUSA = new Select(driver.findElement(country));
+        selectUSA.selectByVisibleText("United States");
+    }
+
+    public void inputAdditionalInformation(String additionalInput){
+        driver.findElement(additionalInformation).sendKeys(additionalInput);
     }
 
     public void inputHomePhone(String homePhoneInput){
