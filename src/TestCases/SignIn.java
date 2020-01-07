@@ -1,6 +1,7 @@
 package TestCases;
 
 import Pages.HomePage;
+import WebDriverProperty.ChromeDriverProperty;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -11,11 +12,13 @@ public class SignIn {
 
     WebDriver driver;
     HomePage homePage;
+    ChromeDriverProperty chromeDriverProperty;
 
 
     @BeforeTest
     public void openHomePage(){
-        System.setProperty("webdriver.chrome.driver","/Users/mariuszgil/Developer/automationPractice/chromedriver-4");
+        chromeDriverProperty = new ChromeDriverProperty();
+        System.setProperty(chromeDriverProperty.chromeDriver, chromeDriverProperty.chromeDriverPath);
         driver = new ChromeDriver();
         homePage = new HomePage(driver);
         homePage.openHomePage();

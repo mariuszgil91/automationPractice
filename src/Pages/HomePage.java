@@ -18,9 +18,7 @@ public class HomePage {
     String homePageTitle = "My Store";
 
     public void pressSignInButton(){
-
         driver.findElement(signInButton).click();
-
     }
 
     public void openHomePage(){
