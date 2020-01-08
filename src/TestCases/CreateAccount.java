@@ -1,12 +1,14 @@
 package TestCases;
 
-import Credentials.createAccountCredentials;
+import Credentials.CreateAccountCredentials;
 import Pages.AuthenticationPage;
 import Pages.CreateAccountPage;
 import Pages.HomePage;
+import Pages.MyAccount;
 import WebDriverProperty.ChromeDriverProperty;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -18,7 +20,8 @@ public class CreateAccount {
     HomePage homePage;
     AuthenticationPage authenticationPage;
     CreateAccountPage createAccountPage;
-    createAccountCredentials createAccountCredentials;
+    CreateAccountCredentials createAccountCredentials;
+    MyAccount myAccount;
 
 
     @BeforeTest
@@ -29,7 +32,8 @@ public class CreateAccount {
         homePage = new HomePage(driver);
         authenticationPage = new AuthenticationPage(driver);
         createAccountPage = new CreateAccountPage(driver);
-        createAccountCredentials = new createAccountCredentials();
+        createAccountCredentials = new CreateAccountCredentials();
+        myAccount = new MyAccount();
         homePage.openHomePage();
     }
 
@@ -63,7 +67,7 @@ public class CreateAccount {
         createAccountPage.inputMobilePhone(createAccountCredentials.mobilePhone);
         createAccountPage.inputAddressAlias(createAccountCredentials.addressAlias);
         createAccountPage.clickRegisterButton();
+        String actualTitle = driver.getTitle();
+        Assert.assertEquals(myAccount.myAccountPageTitle,actualTitle);
     }
-
-
 }
