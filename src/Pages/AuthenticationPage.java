@@ -20,9 +20,11 @@ public class AuthenticationPage {
     By submitCreateAccountButton = By.id("SubmitCreate");
 
     //Sign in
-    By signInEmail = By.id("text");
+    By signInEmail = By.id("email");
     By signInPassword = By.id("passwd");
     By signInButton = By.id("SubmitLogin");
+
+    public String authenticationURL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
 
 
     public void createAccount(String email){
@@ -34,7 +36,8 @@ public class AuthenticationPage {
 
 
     public void signIn(String email, String password){
-        wait.until(ExpectedConditions.presenceOfElementLocated(signInButton));
+        driver.get(authenticationURL);
+        wait.until(ExpectedConditions.presenceOfElementLocated(signInEmail));
         driver.findElement(signInEmail).sendKeys(email);
         wait.until(ExpectedConditions.presenceOfElementLocated(signInPassword));
         driver.findElement(signInPassword).sendKeys(password);

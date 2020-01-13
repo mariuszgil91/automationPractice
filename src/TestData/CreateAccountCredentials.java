@@ -1,4 +1,4 @@
-package Credentials;
+package TestData;
 
 import java.util.concurrent.ThreadLocalRandom;
 

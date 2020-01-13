@@ -1,6 +1,6 @@
 package TestCases;
 
-import Credentials.CreateAccountCredentials;
+import TestData.CreateAccountCredentials;
 import Pages.AuthenticationPage;
 import Pages.CreateAccountPage;
 import Pages.HomePage;
