@@ -12,8 +12,8 @@ public class HomePage {
         this.driver = driver;
     }
 
-
     By signInButton = By.className("login");
+    By womenCategory = By.xpath("//*[@title=\"Women\"]");
     String homePageURL = "http://automationpractice.com/index.php";
     String homePageTitle = "My Store";
 
