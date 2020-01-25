@@ -8,12 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WomenPage {
     WebDriver driver;
     WebDriverWait wait;
+    By blouse = By.xpath("//a[@title='Blouse' and @class='product-name']");
+
     public WomenPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 5);
     }
-
-    By blouse = By.xpath("//*[@title=\"Blouse\"]");
 
     public void clickBlouse(){
         wait.until(ExpectedConditions.presenceOfElementLocated(blouse));

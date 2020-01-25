@@ -23,7 +23,6 @@ public class CreateAccount {
     CreateAccountCredentials createAccountCredentials;
     MyAccount myAccount;
 
-
     @BeforeTest
     public void openHomePage(){
         chromeDriverProperty = new ChromeDriverProperty();

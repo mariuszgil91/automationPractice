@@ -14,16 +14,16 @@ public class BlousePage {
         wait = new WebDriverWait(driver, 5);
     }
 
-    By addToCart = By.xpath("//button[@name=\"Submit\"]");
-    By proceedToCheckout = By.xpath("//a[@title=\"Proceed to checkout\"]");
+    By addToCart = By.id("add_to_cart");
+    By proceedToCheckout = By.xpath("//*[@class=\"btn btn-default button button-medium\"]");
 
-    public void pressAddtoCart(){
+    public void pressAddToCart(){
         wait.until(ExpectedConditions.presenceOfElementLocated(addToCart));
         driver.findElement(addToCart).click();
     }
 
     public void pressProceedToCheckout(){
-        wait.until(ExpectedConditions.presenceOfElementLocated(proceedToCheckout));
+        wait.until(ExpectedConditions.elementToBeClickable(proceedToCheckout));
         driver.findElement(proceedToCheckout).click();
     }
 }

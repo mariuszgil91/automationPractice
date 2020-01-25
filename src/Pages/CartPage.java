@@ -14,7 +14,7 @@ public class CartPage {
         wait = new WebDriverWait(driver, 5);
     }
 
-    By proceedToCheckoutSummary = By.xpath("//a[@title=\"Proceed to checkout\"]");
+    By proceedToCheckoutSummary = By.xpath("//*[@class=\"button btn btn-default standard-checkout button-medium\"]");
     By proceedToCheckoutAddress = By.xpath("//*[@name=\"processAddress\"]");
     By proceedToCheckoutShipping = By.xpath("//*[@name=\"processCarrier\"]");
     By agreeTerms = By.id("cgv");
@@ -51,8 +51,5 @@ public class CartPage {
         wait.until(ExpectedConditions.presenceOfElementLocated(confirmOrder));
         driver.findElement(confirmOrder).click();
     }
-
-
-
 }
 
