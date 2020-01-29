@@ -19,5 +19,10 @@ public class CreateAccountCredentials {
     public String homePhone = "123456789";
     public String mobilePhone = "987654321";
     public String addressAlias = "SGL";
+    public String dropDrownListDay = "1";
+    public String dropDrownListMonth = "1";
+    public String dropDrownListYear = "2010";
+    public String dropDrownListState = "Alabama";
+    public String dropDrownListCountry = "United States";
 
 }
