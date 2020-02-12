@@ -10,12 +10,12 @@ public class BuyBlouse extends BaseTest {
 
     @Test
     public void buyBlouse(){
-        HomePage homePage = new HomePage(driver);
-        AuthenticationPage authenticationPage = new AuthenticationPage(driver);
-        WomenPage womenPage = new WomenPage(driver);
-        BlousePage blousePage = new BlousePage(driver);
+        HomePage homePage = new HomePage(getDriver());
+        AuthenticationPage authenticationPage = new AuthenticationPage(getDriver());
+        WomenPage womenPage = new WomenPage(getDriver());
+        BlousePage blousePage = new BlousePage(getDriver());
         LogInCredentials logInCredentials = new LogInCredentials();
-        CartPage cartPage = new CartPage(driver);
+        CartPage cartPage = new CartPage(getDriver());
 
         homePage.openHomePage();
         homePage.click(homePage.signInButton);
@@ -31,7 +31,7 @@ public class BuyBlouse extends BaseTest {
         cartPage.click(cartPage.proceedToCheckoutShipping);
         cartPage.click(cartPage.payByBankWire);
         cartPage.click(cartPage.confirmOrder);
-        String actualTitle = driver.getTitle();
+        String actualTitle = getDriver().getTitle();
         Assert.assertEquals(cartPage.orderConfirmationPageTitle,actualTitle);
     }
 

@@ -8,7 +8,7 @@ public class VerifyHomePageTitle extends BaseTest {
 
     @Test
     public void verifyIfYouAreOnTheHomePage(){
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.openHomePage();
         homePage.checkIfYouAreOnTheHomePage();
     }

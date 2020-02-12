@@ -11,12 +11,12 @@ public class SignIn extends BaseTest {
 
     @Test
     public void signInApplication(){
-        AuthenticationPage authenticationPage= new AuthenticationPage(driver);
+        AuthenticationPage authenticationPage= new AuthenticationPage(getDriver());
         LogInCredentials logInCredentials = new LogInCredentials();
         MyAccount myAccount = new MyAccount();
 
         authenticationPage.signIn(logInCredentials.emailAddress, logInCredentials.password);
-        String actualTitle = driver.getTitle();
+        String actualTitle = getDriver().getTitle();
         Assert.assertEquals(myAccount.myAccountPageTitle,actualTitle);
     }
 

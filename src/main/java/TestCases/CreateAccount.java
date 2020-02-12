@@ -13,9 +13,9 @@ public class CreateAccount extends BaseTest {
     @Test
     public void createAccount(){
 
-        HomePage homePage = new HomePage(driver);
-        AuthenticationPage authenticationPage = new AuthenticationPage(driver);
-        CreateAccountPage createAccountPage = new CreateAccountPage(driver);
+        HomePage homePage = new HomePage(getDriver());
+        AuthenticationPage authenticationPage = new AuthenticationPage(getDriver());
+        CreateAccountPage createAccountPage = new CreateAccountPage(getDriver());
         CreateAccountCredentials createAccountCredentials = new CreateAccountCredentials();
         MyAccount myAccount = new MyAccount();
 
@@ -42,7 +42,7 @@ public class CreateAccount extends BaseTest {
         createAccountPage.writeText(createAccountPage.mobilePhone, createAccountCredentials.mobilePhone);
         createAccountPage.writeText(createAccountPage.addressAlias, createAccountCredentials.addressAlias);
         createAccountPage.click(createAccountPage.submitButton);
-        String actualTitle = driver.getTitle();
+        String actualTitle = getDriver().getTitle();
         Assert.assertEquals(myAccount.myAccountPageTitle,actualTitle);
     }
 }
