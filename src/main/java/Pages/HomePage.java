@@ -10,6 +10,7 @@ public class HomePage extends BasePage{
     public By signInButton = By.className("login");
     public By womenCategory = By.xpath("//a[@title=\"Women\"]");
     public By homePageLogo = By.id("header_logo");
+    public By cartButton = By.cssSelector("div .shopping_cart");
     String homePageURL = "http://automationpractice.com/index.php";
     String homePageTitle = "My Store";
 
