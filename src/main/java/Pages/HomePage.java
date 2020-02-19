@@ -11,6 +11,7 @@ public class HomePage extends BasePage{
     public By womenCategory = By.xpath("//a[@title=\"Women\"]");
     public By homePageLogo = By.id("header_logo");
     public By cartButton = By.cssSelector("div .shopping_cart");
+    public By contactUsButton = By.cssSelector("div #contact-link");
     String homePageURL = "http://automationpractice.com/index.php";
     String homePageTitle = "My Store";
 

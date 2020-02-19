@@ -13,7 +13,7 @@ public class CartPage extends BasePage {
     public By payByBankWire = By.xpath("//a[@title=\"Pay by bank wire\"]");
     public By confirmOrder = By.xpath("//*[text()=\"I confirm my order\"]");
     public String orderConfirmationPageTitle = "Order confirmation - My Store";
-    public String cartPageTitle = "My Store";
+    public String cartPageTitle = "Order - My Store";
 
     public CartPage(WebDriver driver) {
         super(driver);
